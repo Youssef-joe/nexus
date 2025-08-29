@@ -1,0 +1,118 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "login": "Login",
+    "signup": "Sign Up",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "messages": "Messages",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "landing": {
+    "hero": {
+      "title": "Connect with Expert L&D Professionals",
+      "subtitle": "Find verified Learning & Development specialists for your training needs, or offer your expertise to organizations worldwide.",
+      "cta_hire": "Hire Experts",
+      "cta_join": "Join as Expert"
+    },
+    "features": {
+      "title": "Why Choose L&D Nexus?",
+      "subtitle": "The premier marketplace for Learning & Development professionals",
+      "ai_matching": {
+        "title": "AI-Powered Matching",
+        "description": "Smart algorithms connect you with the perfect L&D professionals for your specific needs."
+      },
+      "secure_payments": {
+        "title": "Milestone Payments",
+        "description": "Secure, milestone-based payment system ensures quality delivery and fair compensation."
+      },
+      "verified_experts": {
+        "title": "Verified Experts",
+        "description": "All L&D professionals are verified with proven track records and certifications."
+      },
+      "global_reach": {
+        "title": "Global Network",
+        "description": "Access to L&D professionals from around the world, working in your timezone."
+      }
+    },
+    "testimonials": {
+      "title": "What Our Users Say",
+      "testimonial1": {
+        "text": "L&D Nexus helped us find the perfect training consultant for our digital transformation program. The quality was exceptional.",
+        "author": "Sarah Johnson",
+        "role": "HR Director, TechCorp"
+      },
+      "testimonial2": {
+        "text": "As an L&D professional, this platform has connected me with amazing organizations and helped grow my consultancy business.",
+        "author": "Ahmed Al-Rahman",
+        "role": "Learning Consultant"
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your Learning?",
+      "subtitle": "Join thousands of organizations and L&D professionals already using L&D Nexus",
+      "button": "Get Started Today"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to your L&D Nexus account",
+      "email": "Email Address",
+      "password": "Password",
+      "remember": "Remember me",
+      "forgot": "Forgot password?",
+      "button": "Sign In",
+      "register_link": "Don't have an account? Sign up"
+    },
+    "signup": {
+      "title": "Join L&D Nexus",
+      "subtitle": "Create your account and start connecting",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email Address",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "role_selection": "I am a...",
+      "organization": "Organization",
+      "professional": "L&D Professional",
+      "terms": "I agree to the Terms of Service and Privacy Policy",
+      "button": "Create Account",
+      "login_link": "Already have an account? Sign in"
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome back",
+    "overview": "Overview",
+    "projects": "Projects",
+    "messages": "Messages",
+    "payments": "Payments",
+    "settings": "Settings",
+    "browse_experts": "Browse Experts",
+    "post_project": "Post New Project",
+    "my_proposals": "My Proposals",
+    "active_projects": "Active Projects"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try Again",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "view": "View",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "select": "Select",
+    "upload": "Upload",
+    "download": "Download"
+  }
+}

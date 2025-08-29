@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* L&D Nexus Design System - Professional Learning Platform
+All colors are HSL and match the provided blue gradient theme
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --primary: 210 100% 64%; /* #007FFF - Medium Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+    --primary-light: 210 100% 84%; /* #4FAFFF - Light Blue */
+    --primary-dark: 222 100% 35%; /* #003EB3 - Deep Blue */
+    
+    /* Background & Surfaces */
+    --background: 0 0% 100%; /* White */
+    --foreground: 222 100% 35%; /* Deep Blue for text */
+    
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 222 100% 35%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 100% 35%;
+    
+    /* Secondary Colors */
+    --secondary: 210 100% 90%; /* #B3D8FF - Light Sky Blue */
+    --secondary-foreground: 222 100% 35%;
+    
+    --muted: 210 25% 95%;
+    --muted-foreground: 222 25% 50%;
+    
+    --accent: 225 83% 53%; /* #1D4ED8 - Dark Blue for accents */
+    --accent-foreground: 0 0% 100%;
+    
+    /* System Colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 210 40% 90%;
+    --input: 210 40% 90%;
+    --ring: 210 100% 64%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 84%), hsl(210 100% 64%), hsl(222 100% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 84%) 0%, hsl(210 100% 64%) 50%, hsl(222 100% 35%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 25% 98%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(210 100% 64% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(210 100% 64% / 0.15);
+    --shadow-button: 0 4px 14px 0 hsl(210 100% 64% / 0.39);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with blue theme */
+    --background: 222 100% 5%; /* Very dark blue */
+    --foreground: 0 0% 100%; /* White text */
+    
+    --card: 222 80% 8%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 222 80% 8%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 210 100% 64%; /* Keep brand blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 100% 84%;
+    --primary-dark: 222 100% 35%;
+    
+    --secondary: 222 50% 15%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 222 50% 12%;
+    --muted-foreground: 210 25% 70%;
+    
+    --accent: 225 83% 53%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 222 50% 15%;
+    --input: 222 50% 15%;
+    --ring: 210 100% 64%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    transition: var(--transition-smooth);
+  }
+  
+  /* RTL Support */
+  [dir="rtl"] {
+    direction: rtl;
+  }
+  
+  [dir="ltr"] {
+    direction: ltr;
+  }
+}
+
+@layer components {
+  /* Hero Button Variant */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary-light via-primary to-primary-dark text-white font-semibold px-8 py-3 rounded-xl shadow-[var(--shadow-button)] hover:shadow-[var(--shadow-elegant)] transform hover:scale-105 transition-all duration-300;
+  }
+  
+  /* Glass Card Effect */
+  .card-glass {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-[var(--shadow-card)];
+  }
+  
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-primary-dark to-accent bg-clip-text text-transparent;
+  }
+  
+  /* Professional Card */
+  .card-professional {
+    @apply bg-[var(--gradient-card)] border border-border/50 rounded-2xl p-6 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 hover:scale-[1.02];
+  }
+}
