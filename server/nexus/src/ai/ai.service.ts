@@ -10,8 +10,10 @@ export class AIService {
 
   constructor(private configService: ConfigService) {
     // Set the API key as environment variable
-    process.env.GOOGLE_GENERATIVE_AI_API_KEY = this.configService.get('GEMINI_API_KEY');
-    this.model = google('gemini-1.5-flash');
+    const apiKey = this.configService.get('GEMINI_API_KEY');
+    console.log('Gemini API Key configured:', !!apiKey);
+    process.env.GOOGLE_GENERATIVE_AI_API_KEY = apiKey;
+    this.model = google('models/gemini-2.0-flash');
   }
 
   async matchProfessionalToProject(professional: any, project: any): Promise<number> {
@@ -62,6 +64,8 @@ export class AIService {
 
   async generateProjectInsights(project: any): Promise<any> {
     try {
+      console.log('Generating AI insights for project:', project.title);
+      
       const prompt = `
         Analyze this project and provide insights:
         
@@ -82,6 +86,7 @@ export class AIService {
         5. Recommendations for improvement
       `;
 
+      console.log('Calling Gemini API...');
       const { object } = await generateObject({
         model: this.model,
         schema: z.object({
@@ -96,9 +101,12 @@ export class AIService {
         prompt,
       });
 
+      console.log('AI insights generated successfully:', object);
       return object;
     } catch (error) {
-      console.error('AI insights error:', error);
+      console.error('AI insights error details:', error);
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
       return null;
     }
   }

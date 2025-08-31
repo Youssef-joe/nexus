@@ -38,8 +38,15 @@ export class AuthService {
     await this.emailService.sendVerificationEmail(user.email, verificationToken);
 
     const { password, verificationToken: token, ...userResponse } = user.toObject();
+    
+    // In development, auto-verify users if email fails
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    const message = isDevelopment 
+      ? 'Registration successful. Check console for verification link or proceed to login.'
+      : 'Registration successful. Please check your email to verify your account.';
+    
     return {
-      message: 'Registration successful. Please check your email to verify your account.',
+      message,
       user: userResponse,
     };
   }
@@ -55,7 +62,15 @@ export class AuthService {
     }
 
     if (user.status === UserStatus.PENDING_VERIFICATION) {
-      throw new UnauthorizedException('Please verify your email before logging in');
+      // In development, allow login without email verification
+      if (process.env.NODE_ENV === 'development') {
+        console.log('⚠️  Development mode: Allowing login without email verification');
+        user.verified = true;
+        user.status = UserStatus.ACTIVE;
+        await user.save();
+      } else {
+        throw new UnauthorizedException('Please verify your email before logging in');
+      }
     }
 
     if (user.status === UserStatus.SUSPENDED) {

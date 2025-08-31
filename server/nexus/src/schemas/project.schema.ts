@@ -34,7 +34,7 @@ export class Project {
   @Prop({ required: true, enum: ProjectType })
   type: ProjectType;
 
-  @Prop({ default: ProjectStatus.DRAFT, enum: ProjectStatus })
+  @Prop({ default: ProjectStatus.OPEN, enum: ProjectStatus })
   status: ProjectStatus;
 
   @Prop({ type: [String] })

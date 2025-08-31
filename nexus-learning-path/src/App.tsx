@@ -20,6 +20,11 @@ import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import { VerifyEmail } from "./pages/VerifyEmail";
 import { Dashboard } from "./pages/Dashboard";
+import { Projects } from "./pages/Projects";
+import { ProjectDetails } from "./pages/ProjectDetails";
+import { Profile } from "./pages/Profile";
+import { Messages } from "./pages/Messages";
+import { Services } from "./pages/Services";
 import { About } from "./pages/About";
 import NotFound from "./pages/NotFound";
 
@@ -45,6 +50,7 @@ const App = () => {
             {/* Public routes with full layout */}
             <Route path="/" element={<Layout><Landing /></Layout>} />
             <Route path="/about" element={<Layout><About /></Layout>} />
+            <Route path="/services" element={<Layout><Services /></Layout>} />
             
             {/* Auth routes without footer */}
             <Route path="/login" element={<Layout showFooter={false}><Login /></Layout>} />
@@ -56,6 +62,34 @@ const App = () => {
               <ProtectedRoute>
                 <Layout showFooter={false}>
                   <Dashboard />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/projects" element={
+              <ProtectedRoute>
+                <Layout showFooter={false}>
+                  <Projects />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/projects/:id" element={
+              <ProtectedRoute>
+                <Layout showFooter={false}>
+                  <ProjectDetails />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/profile" element={
+              <ProtectedRoute>
+                <Layout showFooter={false}>
+                  <Profile />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/messages" element={
+              <ProtectedRoute>
+                <Layout showFooter={false}>
+                  <Messages />
                 </Layout>
               </ProtectedRoute>
             } />

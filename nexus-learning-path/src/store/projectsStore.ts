@@ -61,14 +61,31 @@ export const useProjectsStore = create<ProjectsState>((set, get) => ({
   fetchProjects: async (params = {}) => {
     set({ isLoading: true });
     try {
+      console.log('Fetching projects with params:', params);
       const response = await apiClient.getProjects(params);
+      console.log('Raw API response:', response);
+      console.log('Response type:', typeof response);
+      console.log('Is array?', Array.isArray(response));
+      
+      // Handle different response formats
+      let projects = [];
+      if (Array.isArray(response)) {
+        projects = response;
+      } else if (response && response.projects) {
+        projects = response.projects;
+      } else if (response && Array.isArray(response.data)) {
+        projects = response.data;
+      }
+      
+      console.log('Final projects array:', projects);
       set({ 
-        projects: response.projects, 
-        pagination: response.pagination,
+        projects: projects,
+        pagination: response.pagination || null,
         isLoading: false 
       });
     } catch (error) {
-      set({ isLoading: false });
+      console.error('Failed to fetch projects:', error);
+      set({ isLoading: false, projects: [] });
       throw error;
     }
   },

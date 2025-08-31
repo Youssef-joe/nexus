@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '@/store/authStore';
 import { useProjectsStore } from '@/store/projectsStore';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -20,6 +21,7 @@ import {
 
 export const Dashboard = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { user } = useAuthStore();
   const { myProjects, recommendedProjects, fetchMyProjects, fetchRecommendedProjects, isLoading } = useProjectsStore();
 
@@ -125,7 +127,11 @@ export const Dashboard = () => {
                     }
                   </CardDescription>
                 </div>
-                <Button className="hero" variant="hero">
+                <Button 
+                  className="hero" 
+                  variant="hero"
+                  onClick={() => navigate('/projects')}
+                >
                   <Plus className="h-4 w-4 mr-2" />
                   {isOrganization ? 'Post Project' : 'Find Projects'}
                 </Button>
@@ -190,30 +196,30 @@ export const Dashboard = () => {
               <CardContent className="space-y-3">
                 {isOrganization ? (
                   <>
-                    <Button variant="outline" className="w-full justify-start">
+                    <Button variant="outline" className="w-full justify-start" onClick={() => navigate('/projects')}>
                       <Users className="h-4 w-4 mr-2" />
                       Browse Experts
                     </Button>
-                    <Button variant="outline" className="w-full justify-start">
+                    <Button variant="outline" className="w-full justify-start" onClick={() => navigate('/projects')}>
                       <Plus className="h-4 w-4 mr-2" />
                       Post New Project
                     </Button>
-                    <Button variant="outline" className="w-full justify-start">
+                    <Button variant="outline" className="w-full justify-start" onClick={() => navigate('/messages')}>
                       <MessageSquare className="h-4 w-4 mr-2" />
                       View Messages
                     </Button>
                   </>
                 ) : (
                   <>
-                    <Button variant="outline" className="w-full justify-start">
+                    <Button variant="outline" className="w-full justify-start" onClick={() => navigate('/projects')}>
                       <Briefcase className="h-4 w-4 mr-2" />
                       Find Projects
                     </Button>
-                    <Button variant="outline" className="w-full justify-start">
+                    <Button variant="outline" className="w-full justify-start" onClick={() => navigate('/profile')}>
                       <Star className="h-4 w-4 mr-2" />
                       Update Profile
                     </Button>
-                    <Button variant="outline" className="w-full justify-start">
+                    <Button variant="outline" className="w-full justify-start" onClick={() => navigate('/messages')}>
                       <MessageSquare className="h-4 w-4 mr-2" />
                       View Messages
                     </Button>

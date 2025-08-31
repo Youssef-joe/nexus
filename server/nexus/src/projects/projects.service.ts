@@ -17,18 +17,26 @@ export class ProjectsService {
   ) {}
 
   async create(createProjectDto: CreateProjectDto, organizationId: string) {
+    console.log('Creating project:', createProjectDto.title);
+    
     const project = new this.projectModel({
       ...createProjectDto,
       organizationId,
     });
 
     const savedProject = await project.save();
+    console.log('Project saved, generating AI insights...');
 
     // Generate AI insights for the project
     const aiInsights = await this.aiService.generateProjectInsights(savedProject);
+    console.log('AI insights result:', aiInsights);
+    
     if (aiInsights) {
       savedProject.aiInsights = aiInsights;
       await savedProject.save();
+      console.log('AI insights saved to project');
+    } else {
+      console.log('No AI insights generated');
     }
 
     return savedProject;
