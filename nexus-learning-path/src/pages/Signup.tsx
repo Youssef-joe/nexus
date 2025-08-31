@@ -9,7 +9,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useAuthStore, UserRole } from '@/store/authStore';
 import { useToast } from '@/hooks/use-toast';
-import { BookOpen, Mail, Lock, User } from 'lucide-react';
+import { Mail, Lock, User } from 'lucide-react';
+import { Logo } from '../components/Logo';
 
 export const Signup = () => {
   const { t } = useTranslation();
@@ -93,7 +94,7 @@ export const Signup = () => {
         <div className="text-center">
           <Link to="/" className="inline-flex items-center space-x-2 mb-8">
             <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-primary">
-              <BookOpen className="h-7 w-7 text-white" />
+              <Logo className="text-white" variant="default" />
             </div>
             <span className="text-2xl font-bold text-gradient">L&D Nexus</span>
           </Link>

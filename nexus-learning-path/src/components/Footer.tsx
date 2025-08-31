@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { BookOpen, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Twitter, Linkedin, Mail } from 'lucide-react';
+import { Logo } from './Logo';
 
 export const Footer = () => {
   const { t } = useTranslation();
@@ -13,7 +14,7 @@ export const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/20">
-                <BookOpen className="h-6 w-6 text-white" />
+                <Logo className="text-white" variant="small" />
               </div>
               <span className="text-xl font-bold">L&D Nexus</span>
             </div>

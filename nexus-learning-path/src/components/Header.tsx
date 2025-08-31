@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useAuthStore } from '@/store/authStore';
-import { BookOpen, User, LogOut } from 'lucide-react';
+import { User, LogOut } from 'lucide-react';
+import { Logo } from './Logo';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,11 +27,8 @@ export const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2">
-          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-primary">
-            <BookOpen className="h-6 w-6 text-white" />
-          </div>
-          <span className="text-xl font-bold text-gradient">L&D Nexus</span>
+        <Link to="/" className="flex items-center">
+          <Logo variant="large" className="h-12 w-auto" />
         </Link>
 
         {/* Navigation */}
