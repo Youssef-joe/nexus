@@ -103,6 +103,9 @@ export const Login = () => {
                     <SelectItem value="professional">
                       {t('auth.signup.professional')}
                     </SelectItem>
+                    <SelectItem value="admin">
+                      Admin
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>

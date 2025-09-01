@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useAuthStore } from '@/store/authStore';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
@@ -10,6 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 import { User, Mail, Phone, MapPin, Building, Star, Award, Briefcase } from 'lucide-react';
 
 export const Profile = () => {
+  const {t} = useTranslation();
   const { user, updateProfile } = useAuthStore();
   const { toast } = useToast();
   const [isEditing, setIsEditing] = useState(false);

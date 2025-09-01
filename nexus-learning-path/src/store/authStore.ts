@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { apiClient } from '../lib/api';
 
-export type UserRole = 'organization' | 'professional';
+export type UserRole = 'organization' | 'professional' | 'admin';
 
 export interface User {
   _id: string;

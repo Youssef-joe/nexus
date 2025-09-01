@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { ProjectsModule } from './projects/projects.module';
 import { ApplicationsModule } from './applications/applications.module';
 import { AIModule } from './ai/ai.module';
+import { AdminModule } from './admin/admin.module';
 import { EmailService } from './email/email.service';
 
 @Module({
@@ -33,6 +34,7 @@ import { EmailService } from './email/email.service';
     ProjectsModule,
     ApplicationsModule,
     AIModule,
+    AdminModule,
   ],
   controllers: [AppController],
   providers: [AppService, EmailService],

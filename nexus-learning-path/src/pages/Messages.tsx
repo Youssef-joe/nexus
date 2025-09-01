@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { MessageSquare, Search, Send, MoreVertical } from 'lucide-react';
 
 export const Messages = () => {
+  const { t } = useTranslation();
   const [selectedChat, setSelectedChat] = useState<number | null>(0);
   const [newMessage, setNewMessage] = useState('');
 

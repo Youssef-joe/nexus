@@ -151,6 +151,11 @@ class ApiClient {
   async getMyApplications() {
     return this.request<any[]>('/applications/my-applications');
   }
+
+  // Admin endpoints
+  async getAdminStats() {
+    return this.request<any>('/admin/stats');
+  }
 }
 
 export const apiClient = new ApiClient(API_BASE_URL);

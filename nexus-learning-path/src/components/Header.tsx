@@ -86,6 +86,14 @@ export const Header = () => {
                 >
                   {t('navigation.messages')}
                 </DropdownMenuItem>
+                {user.role === 'admin' && (
+                  <DropdownMenuItem 
+                    onClick={() => navigate('/admin')}
+                    className="cursor-pointer text-red-600 font-semibold"
+                  >
+                    Admin Dashboard
+                  </DropdownMenuItem>
+                )}
                 <DropdownMenuSeparator />
                 <DropdownMenuItem 
                   onClick={handleLogout}
