@@ -26,6 +26,7 @@ import { Profile } from "./pages/Profile";
 import { Messages } from "./pages/Messages";
 import { Services } from "./pages/Services";
 import { AdminDashboard } from "./pages/AdminDashboard";
+import { RecommendedProjects } from "./pages/RecommendedProjects";
 import { About } from "./pages/About";
 import NotFound from "./pages/NotFound";
 
@@ -98,6 +99,13 @@ const App = () => {
               <ProtectedRoute>
                 <Layout showFooter={false}>
                   <AdminDashboard />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/recommended" element={
+              <ProtectedRoute>
+                <Layout showFooter={false}>
+                  <RecommendedProjects />
                 </Layout>
               </ProtectedRoute>
             } />

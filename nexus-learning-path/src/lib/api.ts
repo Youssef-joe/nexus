@@ -156,6 +156,17 @@ class ApiClient {
   async getAdminStats() {
     return this.request<any>('/admin/stats');
   }
+
+  // Matching endpoints
+  async getMatchingProfessionals(projectId: string, limit?: number) {
+    const params = limit ? `?limit=${limit}` : '';
+    return this.request<any[]>(`/matching/professionals/${projectId}${params}`);
+  }
+
+  async getMatchingProjects(limit?: number) {
+    const params = limit ? `?limit=${limit}` : '';
+    return this.request<any[]>(`/matching/projects${params}`);
+  }
 }
 
 export const apiClient = new ApiClient(API_BASE_URL);
