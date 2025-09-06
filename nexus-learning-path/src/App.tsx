@@ -26,6 +26,8 @@ import { Profile } from "./pages/Profile";
 import { Messages } from "./pages/Messages";
 import { Services } from "./pages/Services";
 import { AdminDashboard } from "./pages/AdminDashboard";
+import { PaymentPage } from "./pages/PaymentPage";
+import { PaymentHistory } from "./pages/PaymentHistory";
 import { About } from "./pages/About";
 import NotFound from "./pages/NotFound";
 
@@ -98,6 +100,20 @@ const App = () => {
               <ProtectedRoute>
                 <Layout showFooter={false}>
                   <AdminDashboard />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/projects/:projectId/payment" element={
+              <ProtectedRoute>
+                <Layout showFooter={false}>
+                  <PaymentPage />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/payments" element={
+              <ProtectedRoute>
+                <Layout showFooter={false}>
+                  <PaymentHistory />
                 </Layout>
               </ProtectedRoute>
             } />

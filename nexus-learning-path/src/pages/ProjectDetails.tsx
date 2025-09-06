@@ -75,11 +75,21 @@ export const ProjectDetails = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex items-center justify-between mb-8">
             <Button variant="ghost" onClick={() => navigate('/projects')}>
               <ArrowLeft className="h-4 w-4 mr-2" />
               {t('project_details.back_to_projects')}
             </Button>
+            
+            {/* Fund Project Button for Organizations */}
+            {isOrganization && isOwner && project.status === 'open' && (
+              <Button 
+                variant="hero" 
+                onClick={() => navigate(`/projects/${id}/payment`)}
+              >
+                Fund Project
+              </Button>
+            )}
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
