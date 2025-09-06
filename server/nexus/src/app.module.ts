@@ -9,6 +9,7 @@ import { ProjectsModule } from './projects/projects.module';
 import { ApplicationsModule } from './applications/applications.module';
 import { AIModule } from './ai/ai.module';
 import { AdminModule } from './admin/admin.module';
+import { MatchingModule } from './matching/matching.module';
 import { EmailService } from './email/email.service';
 
 @Module({
@@ -35,6 +36,7 @@ import { EmailService } from './email/email.service';
     ApplicationsModule,
     AIModule,
     AdminModule,
+    MatchingModule,
   ],
   controllers: [AppController],
   providers: [AppService, EmailService],
