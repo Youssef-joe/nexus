@@ -2,7 +2,7 @@
 
 A bilingual (Arabic-English) digital marketplace connecting businesses with verified Learning & Development professionals. Built with AI-powered matching, automated workflows, and secure collaboration tools.
 
-## 🚀 Features
+##  Features
 
 ### Core Platform Features
 - **Bilingual Support**: Full Arabic and English language support
@@ -136,7 +136,7 @@ nexus/
 └── package.json                 # Root package.json
 ```
 
-## 🔧 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` - User registration
@@ -192,7 +192,7 @@ Automated evaluation includes:
 - Rate competitiveness
 - Recommendation level
 
-## 🌐 Internationalization
+##  Internationalization
 
 The platform supports Arabic and English with:
 - RTL (Right-to-Left) layout for Arabic
@@ -201,7 +201,7 @@ The platform supports Arabic and English with:
 - Localized date/number formatting
 - Cultural adaptations
 
-## 🔒 Security Features
+##  Security Features
 
 - JWT-based authentication
 - Password hashing with bcrypt
@@ -211,7 +211,7 @@ The platform supports Arabic and English with:
 - CORS protection
 - Environment variable security
 
-## 📱 Responsive Design
+## Responsive Design
 
 - Mobile-first approach
 - Tablet and desktop optimized
@@ -231,7 +231,7 @@ The platform supports Arabic and English with:
 2. Deploy the `dist` folder to CDN/hosting service
 3. Configure environment variables for production API
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -239,11 +239,11 @@ The platform supports Arabic and English with:
 4. Add tests if applicable
 5. Submit a pull request
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License.
 
-## 🆘 Support
+##  Support
 
 For support and questions:
 - Create an issue in the repository
