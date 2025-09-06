@@ -164,7 +164,7 @@ nexus/
 - `DELETE /api/applications/:id/withdraw` - Withdraw application
 - `GET /api/applications/my-applications` - Get user's applications
 
-## 🤖 AI Features
+##  AI Features
 
 ### Smart Matching Algorithm
 The AI matching system evaluates:
@@ -219,7 +219,7 @@ The platform supports Arabic and English with:
 - Progressive Web App ready
 - Cross-browser compatibility
 
-## 🚀 Deployment
+## Deployment
 
 ### Backend Deployment
 1. Build the application: `npm run build:server`
