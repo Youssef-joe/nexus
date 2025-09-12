@@ -17,6 +17,7 @@ import {
   Star,
   Brain
 } from 'lucide-react';
+import { TalentMatching } from '../components/TalentMatching';
 
 export const ProjectDetails = () => {
   const { id } = useParams();
@@ -232,6 +233,11 @@ export const ProjectDetails = () => {
                     </div>
                   </CardContent>
                 </Card>
+              )}
+
+              {/* AI Talent Matching - Only for organization owners */}
+              {isOwner && (
+                <TalentMatching projectId={project._id} />
               )}
             </div>
 

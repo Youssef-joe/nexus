@@ -86,6 +86,14 @@ export const Header = () => {
                 >
                   {t('navigation.messages')}
                 </DropdownMenuItem>
+                {user.role === 'professional' && (
+                  <DropdownMenuItem 
+                    onClick={() => navigate('/recommended')}
+                    className="cursor-pointer text-blue-600 font-medium"
+                  >
+                    AI Recommendations
+                  </DropdownMenuItem>
+                )}
                 {user.role === 'admin' && (
                   <DropdownMenuItem 
                     onClick={() => navigate('/admin')}
