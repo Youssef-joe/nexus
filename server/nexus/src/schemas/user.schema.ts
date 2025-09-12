@@ -97,6 +97,13 @@ export class User {
 
   @Prop({ default: 0 })
   completedProjects?: number;
+
+  // Payment-related fields
+  @Prop()
+  stripeAccountId?: string;
+
+  @Prop({ default: false })
+  payoutSetupCompleted?: boolean;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

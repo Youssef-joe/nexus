@@ -156,6 +156,31 @@ class ApiClient {
   async getAdminStats() {
     return this.request<any>('/admin/stats');
   }
+
+  // Payment endpoints
+  async createPaymentIntent(projectId: string) {
+    return this.request<{ clientSecret: string; paymentId: string }>('/payments/create-payment-intent', {
+      method: 'POST',
+      body: JSON.stringify({ projectId }),
+    });
+  }
+
+  async confirmPayment(paymentIntentId: string) {
+    return this.request<any>('/payments/confirm-payment', {
+      method: 'POST',
+      body: JSON.stringify({ paymentIntentId }),
+    });
+  }
+
+  async getPaymentHistory() {
+    return this.request<any[]>('/payments/history');
+  }
+
+  async setupPayoutAccount() {
+    return this.request<{ accountId: string; onboardingUrl: string }>('/payments/setup-payout-account', {
+      method: 'POST',
+    });
+  }
 }
 
 export const apiClient = new ApiClient(API_BASE_URL);
