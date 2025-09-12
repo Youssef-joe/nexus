@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import Stripe from 'stripe';
-import { Payment, PaymentDocument } from '../schemas/payment.schema';
+import { Payment, PaymentDocument, PaymentStatus, PaymentType } from '../schemas/payment.schema';
 import { Project, ProjectDocument } from '../schemas/project.schema';
 import { User, UserDocument } from '../schemas/user.schema';
 
@@ -17,9 +17,11 @@ export class PaymentsService {
     @InjectModel(Project.name) private projectModel: Model<ProjectDocument>,
     @InjectModel(User.name) private userModel: Model<UserDocument>,
   ) {
-    this.stripe = new Stripe(this.configService.get('STRIPE_SECRET_KEY'), {
-      apiVersion: '2024-12-18.acacia',
-    });
+    const stripeKey = this.configService.get<string>('STRIPE_SECRET_KEY');
+    if (!stripeKey) {
+      throw new Error('STRIPE_SECRET_KEY is not configured');
+    }
+    this.stripe = new Stripe(stripeKey);
   }
 
   async createPaymentIntent(projectId: string, organizationId: string) {
@@ -53,7 +55,7 @@ export class PaymentsService {
       amount: project.budget,
       platformFee: platformFee / 100,
       stripePaymentIntentId: paymentIntent.id,
-      status: 'pending',
+      status: PaymentStatus.PENDING,
     });
 
     await payment.save();
@@ -76,7 +78,7 @@ export class PaymentsService {
     }
 
     if (paymentIntent.status === 'succeeded') {
-      payment.status = 'completed';
+      payment.status = PaymentStatus.COMPLETED;
       payment.completedAt = new Date();
       await payment.save();
 
@@ -113,9 +115,9 @@ export class PaymentsService {
       projectId,
       professionalId,
       amount,
-      type: 'payout',
+      type: PaymentType.PAYOUT,
       stripeTransferId: transfer.id,
-      status: 'completed',
+      status: PaymentStatus.COMPLETED,
       completedAt: new Date(),
     });
 
