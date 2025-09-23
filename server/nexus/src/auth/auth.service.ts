@@ -52,12 +52,28 @@ export class AuthService {
   }
 
   async login(loginDto: LoginDto) {
+    console.log('Login attempt:', { email: loginDto.email, role: loginDto.role });
+    
     const user = await this.userModel.findOne({ 
       email: loginDto.email,
       role: loginDto.role 
     });
+    
+    console.log('User found:', !!user);
+    if (user) {
+      console.log('User status:', user.status);
+      console.log('User verified:', user.verified);
+    }
 
-    if (!user || !(await bcrypt.compare(loginDto.password, user.password))) {
+    if (!user) {
+      console.log('No user found with email and role');
+      throw new UnauthorizedException('Invalid credentials');
+    }
+    
+    const passwordMatch = await bcrypt.compare(loginDto.password, user.password);
+    console.log('Password match:', passwordMatch);
+    
+    if (!passwordMatch) {
       throw new UnauthorizedException('Invalid credentials');
     }
 

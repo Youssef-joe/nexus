@@ -40,6 +40,7 @@ class ApiClient {
 
   // Auth endpoints
   async login(credentials: { email: string; password: string; role: string }) {
+    console.log('Frontend login request:', credentials);
     return this.request<{ access_token: string; user: any }>('/auth/login', {
       method: 'POST',
       body: JSON.stringify(credentials),
@@ -166,6 +167,21 @@ class ApiClient {
   async getMatchingProjects(limit?: number) {
     const params = limit ? `?limit=${limit}` : '';
     return this.request<any[]>(`/matching/projects${params}`);
+  }
+
+  // Seed endpoint for testing
+  async seedDatabase() {
+    const url = `${this.baseURL}/seed/database`;
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (!response.ok) {
+      throw new Error('Seed failed');
+    }
+    return response.json();
   }
 }
 

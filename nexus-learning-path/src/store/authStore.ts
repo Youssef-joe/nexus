@@ -99,6 +99,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       const user = await apiClient.getProfile();
       set({ user, isAuthenticated: true });
     } catch (error) {
+      console.log('Auth check failed, clearing token');
       localStorage.removeItem('auth_token');
       set({ user: null, isAuthenticated: false });
     }

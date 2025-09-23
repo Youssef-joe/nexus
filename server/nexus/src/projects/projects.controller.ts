@@ -15,6 +15,7 @@ import { ProjectsService } from './projects.service';
 import { CreateProjectDto, UpdateProjectDto } from '../dto/project.dto';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { UserRole } from '../schemas/user.schema';
+import { Public } from '../auth/public.decorator';
 
 @Controller('projects')
 @UseGuards(JwtAuthGuard)
@@ -29,6 +30,7 @@ export class ProjectsController {
     return this.projectsService.create(createProjectDto, req.user._id);
   }
 
+  @Public()
   @Get()
   async findAll(@Query() query: any) {
     return this.projectsService.findAll(query);
