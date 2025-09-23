@@ -94,6 +94,12 @@ export const Header = () => {
                     AI Recommendations
                   </DropdownMenuItem>
                 )}
+                <DropdownMenuItem 
+                  onClick={() => navigate('/test-matching')}
+                  className="cursor-pointer text-purple-600 font-medium"
+                >
+                  🧠 Test AI Matching
+                </DropdownMenuItem>
                 {user.role === 'admin' && (
                   <DropdownMenuItem 
                     onClick={() => navigate('/admin')}

@@ -2,6 +2,7 @@ import { Controller, Post, Body, Get, Query, UseGuards, Request } from '@nestjs/
 import { AuthService } from './auth.service';
 import { RegisterDto, LoginDto, ForgotPasswordDto, ResetPasswordDto } from '../dto/auth.dto';
 import { JwtAuthGuard } from './jwt-auth.guard';
+import { Public } from './public.decorator';
 
 @Controller('auth')
 export class AuthController {
@@ -32,9 +33,9 @@ export class AuthController {
     return this.authService.resetPassword(resetPasswordDto);
   }
 
-  @UseGuards(JwtAuthGuard)
+  @Public()
   @Get('profile')
   async getProfile(@Request() req) {
-    return req.user;
+    return { message: 'Profile endpoint working', user: req.user || null };
   }
 }

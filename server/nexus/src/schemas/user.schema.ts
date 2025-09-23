@@ -97,6 +97,43 @@ export class User {
 
   @Prop({ default: 0 })
   completedProjects?: number;
+
+  // Additional professional fields for AI matching
+  @Prop({ type: [String] })
+  specializations?: string[];
+
+  @Prop()
+  yearsOfExperience?: number;
+
+  @Prop({ type: [String] })
+  industries?: string[];
+
+  @Prop({ type: [String] })
+  projectTypes?: string[];
+
+  @Prop()
+  availability?: string; // 'full-time', 'part-time', 'contract'
+
+  @Prop()
+  minBudget?: number;
+
+  @Prop()
+  maxBudget?: number;
+
+  @Prop({ type: [String] })
+  preferredLocations?: string[];
+
+  @Prop({ default: false })
+  remoteWork?: boolean;
+
+  @Prop()
+  linkedinProfile?: string;
+
+  @Prop()
+  portfolio?: string;
+
+  @Prop({ type: [String] })
+  achievements?: string[];
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

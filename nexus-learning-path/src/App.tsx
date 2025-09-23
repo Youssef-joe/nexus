@@ -27,6 +27,7 @@ import { Messages } from "./pages/Messages";
 import { Services } from "./pages/Services";
 import { AdminDashboard } from "./pages/AdminDashboard";
 import { RecommendedProjects } from "./pages/RecommendedProjects";
+import { TestMatching } from "./pages/TestMatching";
 import { About } from "./pages/About";
 import NotFound from "./pages/NotFound";
 
@@ -106,6 +107,13 @@ const App = () => {
               <ProtectedRoute>
                 <Layout showFooter={false}>
                   <RecommendedProjects />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/test-matching" element={
+              <ProtectedRoute>
+                <Layout showFooter={false}>
+                  <TestMatching />
                 </Layout>
               </ProtectedRoute>
             } />
