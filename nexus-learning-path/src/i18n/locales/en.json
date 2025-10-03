@@ -9,6 +9,7 @@
     "dashboard": "Dashboard",
     "profile": "Profile",
     "messages": "Messages",
+    "bookings": "Bookings",
     "settings": "Settings",
     "logout": "Logout"
   },
@@ -217,5 +218,28 @@
     "select": "Select",
     "upload": "Upload",
     "download": "Download"
+  },
+  "bookings": {
+    "title": "Bookings",
+    "create_booking": "Create Booking",
+    "book_meeting": "Book Meeting",
+    "meeting_title": "Meeting Title",
+    "meeting_type": "Meeting Type",
+    "start_time": "Start Time",
+    "end_time": "End Time",
+    "online_meeting": "Online Meeting",
+    "meeting_link": "Meeting Link",
+    "location": "Location",
+    "description": "Description",
+    "send_reminder": "Send Reminder",
+    "no_bookings": "No bookings for this date",
+    "consultation": "Consultation",
+    "training_session": "Training Session",
+    "workshop": "Workshop",
+    "meeting": "Meeting",
+    "pending": "Pending",
+    "confirmed": "Confirmed",
+    "cancelled": "Cancelled",
+    "completed": "Completed"
   }
 }

@@ -9,6 +9,7 @@
     "dashboard": "لوحة التحكم",
     "profile": "الملف الشخصي",
     "messages": "الرسائل",
+    "bookings": "الحجوزات",
     "settings": "الإعدادات",
     "logout": "تسجيل الخروج"
   },
@@ -217,5 +218,28 @@
     "select": "اختيار",
     "upload": "رفع",
     "download": "تحميل"
+  },
+  "bookings": {
+    "title": "الحجوزات",
+    "create_booking": "إنشاء حجز",
+    "book_meeting": "حجز اجتماع",
+    "meeting_title": "عنوان الاجتماع",
+    "meeting_type": "نوع الاجتماع",
+    "start_time": "وقت البداية",
+    "end_time": "وقت النهاية",
+    "online_meeting": "اجتماع عبر الإنترنت",
+    "meeting_link": "رابط الاجتماع",
+    "location": "الموقع",
+    "description": "الوصف",
+    "send_reminder": "إرسال تذكير",
+    "no_bookings": "لا توجد حجوزات لهذا التاريخ",
+    "consultation": "استشارة",
+    "training_session": "جلسة تدريبية",
+    "workshop": "ورشة عمل",
+    "meeting": "اجتماع",
+    "pending": "في الانتظار",
+    "confirmed": "مؤكد",
+    "cancelled": "ملغي",
+    "completed": "مكتمل"
   }
 }

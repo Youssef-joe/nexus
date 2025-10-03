@@ -10,6 +10,7 @@ import { ApplicationsModule } from './applications/applications.module';
 import { AIModule } from './ai/ai.module';
 import { AdminModule } from './admin/admin.module';
 import { MatchingModule } from './matching/matching.module';
+import { BookingsModule } from './bookings/bookings.module';
 import { EmailService } from './email/email.service';
 
 @Module({
@@ -37,6 +38,7 @@ import { EmailService } from './email/email.service';
     AIModule,
     AdminModule,
     MatchingModule,
+    BookingsModule,
   ],
   controllers: [AppController],
   providers: [AppService, EmailService],

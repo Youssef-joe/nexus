@@ -28,6 +28,7 @@ import { Services } from "./pages/Services";
 import { AdminDashboard } from "./pages/AdminDashboard";
 import { RecommendedProjects } from "./pages/RecommendedProjects";
 import { About } from "./pages/About";
+import { Bookings } from "./pages/Bookings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -106,6 +107,13 @@ const App = () => {
               <ProtectedRoute>
                 <Layout showFooter={false}>
                   <RecommendedProjects />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/bookings" element={
+              <ProtectedRoute>
+                <Layout showFooter={false}>
+                  <Bookings />
                 </Layout>
               </ProtectedRoute>
             } />

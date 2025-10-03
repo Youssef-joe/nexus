@@ -86,6 +86,12 @@ export const Header = () => {
                 >
                   {t('navigation.messages')}
                 </DropdownMenuItem>
+                <DropdownMenuItem 
+                  onClick={() => navigate('/bookings')}
+                  className="cursor-pointer"
+                >
+                  Bookings
+                </DropdownMenuItem>
                 {user.role === 'professional' && (
                   <DropdownMenuItem 
                     onClick={() => navigate('/recommended')}
