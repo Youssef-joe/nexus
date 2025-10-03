@@ -92,6 +92,10 @@ export class BookingsService {
       .findByIdAndUpdate(id, updateBookingDto, { new: true })
       .populate(['organizationId', 'professionalId', 'projectId']);
 
+    if (!updatedBooking) {
+      throw new NotFoundException('Booking not found');
+    }
+
     await this.sendBookingNotification(updatedBooking, 'updated');
     return updatedBooking;
   }
@@ -111,6 +115,10 @@ export class BookingsService {
         cancellationReason: cancelBookingDto.reason,
       }, { new: true })
       .populate(['organizationId', 'professionalId', 'projectId']);
+
+    if (!cancelledBooking) {
+      throw new NotFoundException('Booking not found');
+    }
 
     await this.sendBookingNotification(cancelledBooking, 'cancelled');
     return cancelledBooking;

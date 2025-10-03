@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About",
     "services": "Services",
+    "resources": "Resources",
     "contact": "Contact",
     "login": "Login",
     "signup": "Sign Up",
@@ -241,5 +242,28 @@
     "confirmed": "Confirmed",
     "cancelled": "Cancelled",
     "completed": "Completed"
+  },
+  "resources": {
+    "title": "Resource Hub",
+    "subtitle": "Discover articles, webinars, and courses to enhance your L&D expertise",
+    "featured": "Featured Resources",
+    "all_resources": "All Resources",
+    "articles": "Articles",
+    "webinars": "Webinars",
+    "courses": "Courses",
+    "search_placeholder": "Search resources...",
+    "all_categories": "All Categories",
+    "no_resources": "No resources found",
+    "loading": "Loading resources...",
+    "back_to_resources": "Back to Resources",
+    "resource_details": "Resource Details",
+    "author": "Author",
+    "categories": "Categories",
+    "tags": "Tags",
+    "published": "Published",
+    "views": "views",
+    "minutes": "minutes",
+    "watch_video": "Watch Video",
+    "view_external": "View External Resource"
   }
 }

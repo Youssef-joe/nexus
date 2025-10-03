@@ -138,4 +138,26 @@ export class EmailService {
       }
     }
   }
+
+  async sendEmail(to: string, subject: string, content: string) {
+    try {
+      const mailOptions = {
+        from: this.configService.get('FROM_EMAIL'),
+        to,
+        subject,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <div style="white-space: pre-line;">${content}</div>
+          </div>
+        `,
+      };
+
+      await this.transporter.sendMail(mailOptions);
+    } catch (error) {
+      console.warn('Email sending failed:', error.message);
+      if (this.configService.get('NODE_ENV') === 'development') {
+        console.log(`\n📧 Email to ${to}: ${subject}\n${content}\n`);
+      }
+    }
+  }
 }

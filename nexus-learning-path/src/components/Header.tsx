@@ -51,6 +51,12 @@ export const Header = () => {
           >
             {t('navigation.services')}
           </Link>
+          <Link 
+            to="/resources" 
+            className="text-foreground hover:text-primary transition-colors"
+          >
+            Resources
+          </Link>
         </nav>
 
         {/* Right side actions */}

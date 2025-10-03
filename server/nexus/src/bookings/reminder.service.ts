@@ -24,7 +24,7 @@ export class ReminderService {
         
         if (hoursUntilBooking <= booking.reminderHours) {
           await this.sendReminderEmail(booking);
-          await this.bookingsService.markReminderSent(booking._id.toString());
+          await this.bookingsService.markReminderSent((booking as any)._id.toString());
           this.logger.log(`Reminder sent for booking: ${booking.title}`);
         }
       }

@@ -9,8 +9,10 @@ async function bootstrap() {
 
  
   app.enableCors({
-    origin: configService.get('FRONTEND_URL') || 'http://localhost:8080',
+    origin: true,
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   });
 
 

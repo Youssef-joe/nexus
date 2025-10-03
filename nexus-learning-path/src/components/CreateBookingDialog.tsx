@@ -81,7 +81,7 @@ export const CreateBookingDialog = ({ professionalId, projectId }: CreateBooking
 
           <div>
             <Label htmlFor="type">Type</Label>
-            <Select onValueChange={(value) => setValue('type', value)}>
+            <Select onValueChange={(value) => setValue('type', value)} required>
               <SelectTrigger>
                 <SelectValue placeholder="Select meeting type" />
               </SelectTrigger>

@@ -3,6 +3,7 @@
     "home": "الرئيسية",
     "about": "حول",
     "services": "الخدمات",
+    "resources": "المصادر",
     "contact": "اتصل بنا",
     "login": "تسجيل الدخول",
     "signup": "التسجيل",
@@ -241,5 +242,28 @@
     "confirmed": "مؤكد",
     "cancelled": "ملغي",
     "completed": "مكتمل"
+  },
+  "resources": {
+    "title": "مركز المصادر",
+    "subtitle": "اكتشف المقالات والندوات والدورات لتعزيز خبرتك في التعلم والتطوير",
+    "featured": "المصادر المميزة",
+    "all_resources": "جميع المصادر",
+    "articles": "المقالات",
+    "webinars": "الندوات",
+    "courses": "الدورات",
+    "search_placeholder": "البحث في المصادر...",
+    "all_categories": "جميع الفئات",
+    "no_resources": "لم يتم العثور على مصادر",
+    "loading": "جارٍ تحميل المصادر...",
+    "back_to_resources": "العودة إلى المصادر",
+    "resource_details": "تفاصيل المصدر",
+    "author": "المؤلف",
+    "categories": "الفئات",
+    "tags": "العلامات",
+    "published": "تاريخ النشر",
+    "views": "مشاهدة",
+    "minutes": "دقيقة",
+    "watch_video": "مشاهدة الفيديو",
+    "view_external": "عرض المصدر الخارجي"
   }
 }

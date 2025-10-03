@@ -167,6 +167,37 @@ class ApiClient {
     const params = limit ? `?limit=${limit}` : '';
     return this.request<any[]>(`/matching/projects${params}`);
   }
+
+  // Generic HTTP methods
+  async get<T>(endpoint: string): Promise<{ data: T }> {
+    const result = await this.request<T>(endpoint);
+    return { data: result };
+  }
+
+  async post<T>(endpoint: string, data?: any): Promise<{ data: T }> {
+    const result = await this.request<T>(endpoint, {
+      method: 'POST',
+      body: data ? JSON.stringify(data) : undefined,
+    });
+    return { data: result };
+  }
+
+  async patch<T>(endpoint: string, data?: any): Promise<{ data: T }> {
+    const result = await this.request<T>(endpoint, {
+      method: 'PATCH',
+      body: data ? JSON.stringify(data) : undefined,
+    });
+    return { data: result };
+  }
+
+  async delete<T>(endpoint: string, options?: { data?: any }): Promise<{ data: T }> {
+    const result = await this.request<T>(endpoint, {
+      method: 'DELETE',
+      body: options?.data ? JSON.stringify(options.data) : undefined,
+    });
+    return { data: result };
+  }
 }
 
 export const apiClient = new ApiClient(API_BASE_URL);
+export const api = apiClient;

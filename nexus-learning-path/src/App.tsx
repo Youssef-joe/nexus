@@ -29,6 +29,8 @@ import { AdminDashboard } from "./pages/AdminDashboard";
 import { RecommendedProjects } from "./pages/RecommendedProjects";
 import { About } from "./pages/About";
 import { Bookings } from "./pages/Bookings";
+import { Resources } from "./pages/Resources";
+import { ResourceDetails } from "./pages/ResourceDetails";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -117,6 +119,8 @@ const App = () => {
                 </Layout>
               </ProtectedRoute>
             } />
+            <Route path="/resources" element={<Layout><Resources /></Layout>} />
+            <Route path="/resources/:id" element={<Layout><ResourceDetails /></Layout>} />
             
             {/* Catch-all route */}
             <Route path="*" element={<Layout><NotFound /></Layout>} />
