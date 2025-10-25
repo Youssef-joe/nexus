@@ -25,7 +25,7 @@ import { ProjectDetails } from "./pages/ProjectDetails";
 import { Profile } from "./pages/Profile";
 import { Messages } from "./pages/Messages";
 import { Services } from "./pages/Services";
-import { AdminDashboard } from "./pages/AdminDashboard";
+
 import { RecommendedProjects } from "./pages/RecommendedProjects";
 import { TestMatching } from "./pages/TestMatching";
 import { About } from "./pages/About";
@@ -96,13 +96,7 @@ const App = () => {
                 </Layout>
               </ProtectedRoute>
             } />
-            <Route path="/admin" element={
-              <ProtectedRoute>
-                <Layout showFooter={false}>
-                  <AdminDashboard />
-                </Layout>
-              </ProtectedRoute>
-            } />
+
             <Route path="/recommended" element={
               <ProtectedRoute>
                 <Layout showFooter={false}>
